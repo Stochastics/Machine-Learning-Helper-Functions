@@ -1,13 +1,12 @@
 library(dplyr)
 options(stringsAsFactors = F)
 
-#function to do 'leave one out encoding' 
-#this type of encoding is useful if you have a very high cardinality categorical varible
-#can pre specifiy your desired number of folds
-#target must be named target in dataframe
-#and cv fold id fold_id
-#must specify the encoded feature by string
-#also must specify random noise added by a string, for example 'runif(nrow(df),0,)'
+# Function to do 'leave one out encoding' 
+# This type of encoding is useful if you have a very high cardinality categorical varible
+# Can pre specifiy your desired number of folds
+# Target must be named target in dataframe and CV fold fold_id
+# Must specify the encoded feature by string
+# Also must specify random noise added by a string, for example 'runif(nrow(df),0,)'
 
 LOOencoding = function(df,feature.name,noise.str){
   stopifnot(sum(names(df) %in% c('target','fold_id'))>1)
