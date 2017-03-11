@@ -9,7 +9,7 @@ options(stringsAsFactors = F)
 
 XGB_Data_Process = function(train,test,TARGET,ID=NULL){
   
-  y_label  =train[[TARGET]]
+  y_label  = train[[TARGET]]
   
   train = train[, - which(names(train) %in% c(TARGET,ID))]
   test  = test[, which(names(test) %in% names(train))]
